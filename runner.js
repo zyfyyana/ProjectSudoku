@@ -8,12 +8,9 @@ const sudoku = require('./sudoku');
 // so we should remove them.
 
 function sudokuParse(content) {
-    //console.log(content);
     let firstLine = content.split('\n')[0];
     console.log(firstLine);
-
-
-    return  content;
+    return firstLine;
 }
 
 
@@ -27,7 +24,7 @@ fs.readFile('./sudoku_puzzles.txt', 'utf-8', function read(err, data) {
     let solvedBoard = sudoku.solve(boardString);
 	if(sudoku.isSolved(solvedBoard)) {
 	  console.log("The board was solved!");
-	  console.log(sudoku.prettyBoard(solved_board));
+	  console.log(sudoku.prettyBoard(solvedBoard));
 	}
 	else {
 	  console.log("The board wasn't solved :(");
