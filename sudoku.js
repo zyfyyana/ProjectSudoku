@@ -26,7 +26,7 @@ function prettyBoard(board) {
 
 }
 
-
+// Exports all the functions to use them in another file.
 module.exports = {
 	solve: solve,
 	isSolved: isSolved,
