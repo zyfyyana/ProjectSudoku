@@ -13,6 +13,7 @@ const sudoku = require('./sudoku');
 function sudokuParse(content, puzzleNumber = 0) {
   let puzzle = content.split('\n')[puzzleNumber];
   console.log(puzzle);
+  console.log('parser');
   return puzzle;
 }
 
