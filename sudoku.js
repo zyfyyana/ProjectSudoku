@@ -1,30 +1,29 @@
-// Takes a board as a string in the format
-// you see in the puzzle file. Returns
-// something representing a board after
-// your solver has tried to solve it.
-// How you represent your board is up to you!
+/**
+ * Принимает игровое поле в формате строки — как в файле sudoku-puzzles.txt.
+ * Возвращает игровое поле после попытки его решить.
+ * Договорись со своей командой, в каком формате возвращать этот результат.
+ */
 function solve(boardString) {
-  console.log('first changes');
 }
 
-// Returns a boolean indicating whether
-// or not the provided board is solved.
-// The input board will be in whatever
-// form `solve` returns.
+/**
+ * Принимает игровое поле в том формате, в котором его вернули из функции solve.
+ * Возвращает булевое значение — решено это игровое поле или нет.
+ */
 function isSolved(board) {
 
 }
 
-// Takes in a board in some form and
-// returns a String that's well formatted
-// for output to the screen.
-// The input board will be in whatever
-// form `solve` returns.
+/**
+ * Принимает игровое поле в том формате, в котором его вернули из функции solve.
+ * Возвращает строку с игровым полем для последующего вывода в консоль.
+ * Подумай, как симпатичнее сформировать эту строку.
+ */
 function prettyBoard(board) {
 
 }
 
-// Exports all the functions to use them in another file.
+// Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
   solve,
   isSolved,
