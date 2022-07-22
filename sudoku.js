@@ -6,12 +6,9 @@ function boardToMatrix(boardString) {
   })
 }
 
- function matrixToBoard(boardMatrix){
-  return boardMatrix.map((line)=>line.join('')).join('')
- }
 
 board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--'
-console.log(matrixToBoard(boardToMatrix(board)));
+
 
 /**
  * Принимает игровое поле в формате строки — как в файле sudoku-puzzles.txt.
@@ -19,7 +16,25 @@ console.log(matrixToBoard(boardToMatrix(board)));
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
 function solve(boardString) {
+  
+  const matrix = boardToMatrix(boardString);
+  for (let i=0; i<matrix.length; i += 1) {
+    for (let j=0; j<matrix.length; j++){
+      let randomNum = Math.floor(Math.random()*9)+1;
+      if (matrix[i][j]===0){
+        matrix[i][j]=randomNum;
+      }
+    }
+  }
+  
+  return matrix
 }
+console.log(solve(board))
+
+function matrixToBoard(boardMatrix){
+  return boardMatrix.map((line)=>line.join('')).join('')
+ }
+ console.log(matrixToBoard(solve(board)));
 
 /**
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
