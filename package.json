@@ -24,5 +24,6 @@
   },
   "dependencies": {
     "prettier": "^2.7.1"
+    "express": "^4.18.1"
   }
 }
