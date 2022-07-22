@@ -23,6 +23,7 @@
     "eslint-plugin-import": "^2.25.4"
   },
   "dependencies": {
+    "prettier": "^2.7.1"
     "express": "^4.18.1"
   }
 }
