@@ -26,6 +26,7 @@ function solve(boardString) {
       }
     }
   }
+}
 
   return matrixToBoard(matrix);
 }
