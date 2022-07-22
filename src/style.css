@@ -80,7 +80,7 @@
 .block {
   width: 95px;
   height: 95px;
-  background-color: gray;
+  background-color: lightgreen;
   text-align: center;
   line-height: 90px;
   font-size: 3rem;
@@ -111,14 +111,27 @@
   transform: rotate(270deg);
 }
 
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* test */
 .btn {
   text-align: center;
 }
 
 button {
-  width: 140px;
-  height: 40px;
+  cursor: pointer;
+  width: 200px;
+  height: 80px;
+  font-size: 2rem;
+  transition: 0.2s ease;
 }
 
+button:hover{
+  transform: scale(0.9);
+  filter: brightness(0.9);
+}
 /* test */

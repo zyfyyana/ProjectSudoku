@@ -1,4 +1,6 @@
 /* eslint-disable no-plusplus */
+// const test = "1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--";
+
 function boardToMatrix(boardString) {
   const boardMatrix = new Array(9).fill(null);
   return boardMatrix.map((_, i) => {
@@ -25,9 +27,9 @@ function solve(boardString) {
     }
   }
 
-  return matrix;
+  return matrixToBoard(matrix);
 }
-//console.log(solve(board));
+const board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--';
 
 function matrixToBoard(boardMatrix) {
   return boardMatrix.map((line) => line.join('')).join('');
@@ -37,14 +39,6 @@ function matrixToBoard(boardMatrix) {
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
  * Возвращает булевое значение — решено это игровое поле или нет.
  */
-
-function boardToMatrix(boardString) {
-  const boardMatrix = new Array(9).fill(null);
-  return boardMatrix.map((_, i) => {
-    const boardLine = boardString.substring(i * 9, (i + 1) * 9);
-    return boardLine.split('').map((el) => (el === '-' ? 0 : Number(el)));
-  });
-}
 
 function boardToBlocks(boardString) {
   const boardBlocks = [];
@@ -78,10 +72,6 @@ function boardToBlocks(boardString) {
   return boardBlocks.concat(firstThreeBlocks).concat(secondThreeBlocks).concat(thirdThreeBlocks);
 }
 
-const board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--';
-
-console.log(boardToBlocks(board));
-
 function isSolved(board) {
   const boardMatrix = boardToMatrix(board);
   const boardBlocks = boardToBlocks(board);
@@ -109,7 +99,7 @@ function isSolved(board) {
       return false;
     }
   }
-
+  title
   return true;
 }
 
@@ -119,12 +109,62 @@ function isSolved(board) {
  * Подумай, как симпатичнее сформировать эту строку.
  */
 
-function prettyBoard(board) {
-  let test =
-    "1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--";
-  return test;
+const line = document.querySelector(".line");
+const numbers = document.querySelector(".numbers");
+const numbers2 = document.querySelector(".numbers2");
+
+// TEEEST
+const btn = document.querySelector("button");
+//
+
+function renderBlock() {
+ let block = document.createElement("div");
+ block.classList.add("block");
+ line.appendChild(block);
 }
-console.log(prettyBoard());
+
+for (let i = 0; i < 81; i++) {
+ renderBlock();
+}
+
+function renderNum(value, numbers, clas) {
+ let num = document.createElement("div");
+ num.classList.add(clas);
+ num.textContent = value;
+ numbers.appendChild(num);
+}
+
+for (let i = 1; i < 10; i++) {
+ renderNum(i, numbers, "num");
+ renderNum(i, numbers2, "num2");
+}
+
+const allBlock = document.querySelectorAll(".block");
+
+let startText = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--'
+
+let test = prettyBoard()
+
+btn.addEventListener("click", () => {
+  location.reload()
+ });
+
+let rec = 0;
+let b = setInterval(() => {
+ if (rec === 81) {
+   clearTimeout(b);
+ }
+ allBlock[rec].textContent = test[rec];
+ rec++;
+}, 50);
+
+function prettyBoard() {
+  return solve(board);
+}
+
+const title = document.querySelector('.title')
+title.textContent = startText
+// prettyBoard();
 
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
