@@ -1,3 +1,18 @@
+function boardToMatrix(boardString) {
+  const boardMatrix = new Array(9).fill(null);
+  return boardMatrix.map((_, i)=> {
+    const line = boardString.substring(i * 9, (i + 1) * 9);
+    return line.split('').map((el) => el === '-' ? 0 : Number(el));
+  })
+}
+
+ function matrixToBoard(boardMatrix){
+  return boardMatrix.map((line)=>line.join('')).join('')
+ }
+
+board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--'
+console.log(matrixToBoard(boardToMatrix(board)));
+
 /**
  * Принимает игровое поле в формате строки — как в файле sudoku-puzzles.txt.
  * Возвращает игровое поле после попытки его решить.
@@ -11,7 +26,7 @@ function solve(boardString) {
  * Возвращает булевое значение — решено это игровое поле или нет.
  */
 function isSolved(board) {
-
+ 
 }
 
 /**
