@@ -1,5 +1,6 @@
 let test =
   "123456789657489567345678986765283421087654678298765467829875647298457434782378253";
+
 const line = document.querySelector(".line");
 const numbers = document.querySelector(".numbers");
 const numbers2 = document.querySelector(".numbers2");
@@ -31,13 +32,18 @@ for (let i = 1; i < 10; i++) {
 }
 
 const allBlock = document.querySelectorAll(".block");
-allBlock.forEach((item, index) => {
-  item.textContent = test[index];
-});
+
 btn.addEventListener("click", () => {
-  // console.log(test);
-  // console.log(allBlock);
   allBlock.forEach((item, index) => {
     item.textContent = test[index];
   });
 });
+
+let rec = 0;
+let b = setInterval(() => {
+  if (rec === 81) {
+    clearTimeout(b);
+  }
+  allBlock[rec].textContent = test[rec];
+  rec++;
+}, 50);
