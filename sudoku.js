@@ -6,7 +6,7 @@ function boardToMatrix(boardString) {
   });
 }
 
-//const board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--';
+const board = '1-58-2----9--764-52--4--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--';
 
 /**
  * Принимает игровое поле в формате строки — как в файле sudoku-puzzles.txt.
@@ -27,12 +27,12 @@ function solve(boardString) {
 
   return matrix;
 }
-//console.log(solve(board));
+console.log(solve(board));
 
 function matrixToBoard(boardMatrix) {
   return boardMatrix.map((line) => line.join('')).join('');
 }
-//console.log(matrixToBoard(solve(board)));
+console.log(matrixToBoard(solve(board)));
 
 /**
  * Принимает игровое поле в том формате, в котором его вернули из функции solve.
