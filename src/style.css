@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  position: relative;
+  width: 1100px;
+  height: 1100px;
+  border: 2px solid black;
+  margin: 50px auto;
+}
+
+.board {
+  box-sizing: content-box;
+  width: 900px;
+  height: 900px;
+  border: 6px solid black;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.line {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 5px;
+  justify-content: space-between;
+}
+
+.fakeLine-horizontal {
+  width: 900px;
+  height: 8px;
+  background-color: black;
+  position: absolute;
+  top: 450px;
+  left: 156px;
+  z-index: 1;
+}
+
+.fakeLine-horizontal::after {
+  content: '';
+  display: block;
+  width: 900px;
+  height: 8px;
+  background-color: black;
+  position: absolute;
+  top: 303px;
+  left: 0px;
+  z-index: 1;
+}
+
+.fakeLine-vertical {
+  width: 900px;
+  height: 8px;
+  background-color: black;
+  position: absolute;
+  top: 600px;
+  left: 6px;
+  z-index: 1;
+  transform: rotate(90deg);
+}
+
+.fakeLine-vertical::after {
+  content: '';
+  display: block;
+  width: 900px;
+  height: 8px;
+  background-color: black;
+  position: absolute;
+  top: -300px;
+  z-index: 1;
+}
+
+.block {
+  width: 95px;
+  height: 95px;
+  background-color: lightgreen;
+  text-align: center;
+  line-height: 90px;
+  font-size: 3rem;
+}
+
+.numbers {
+  position: absolute;
+  left: 150px;
+  top: 80px;
+  display: flex;
+  width: 890px;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.numbers2 {
+  left: -330px;
+  top: 570px;
+  transform: rotate(90deg);
+}
+
+.num {
+  font-size: 3rem;
+}
+
+.num2 {
+  font-size: 3rem;
+  transform: rotate(270deg);
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* test */
+.btn {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  width: 200px;
+  height: 80px;
+  font-size: 2rem;
+  transition: 0.2s ease;
+}
+
+button:hover{
+  transform: scale(0.9);
+  filter: brightness(0.9);
+}
+/* test */
